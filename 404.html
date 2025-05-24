@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Não Encontrada | GCG Terraplanagem</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        :root {
+            --primary-color: #8B2100;
+            --secondary-color: #1E5799;
+            --accent-color: #F9A825;
+            --dark-color: #252525;
+            --light-color: #f8f8f8;
+            --white-color: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        /* Header e Menu */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.97);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        /* Menu */
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            position: relative;
+            list-style: none;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 18px;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 30px;
+            transform: scale(0);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .nav-link:hover:before,
+        .nav-item.active .nav-link:before {
+            transform: scale(1);
+        }
+        
+        .nav-link:hover,
+        .nav-item.active .nav-link {
+            color: var(--white-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+        
+        /* 404 Error Section */
+        .error-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 0 60px;
+            background-color: var(--light-color);
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiB2aWV3Qm94PSIwIDAgMTQ0IDE0NCI+PHBhdGggZmlsbD0icmdiYSgxMzksIDMzLCAwLCAwLjAzKSIgZD0iTTcyIDcyQzg0LjE1MDIgNTkuODQ5OCA4NC4xNTAyIDQwLjE1MDIgNzIgMjhDNTkuODQ5OCAxNS44NDk4IDQwLjE1MDIgMTUuODQ5OCAyOCAyOEMxNS44NDk4IDQwLjE1MDIgMTUuODQ5OCA1OS44NDk4IDI4IDcyQzQwLjE1MDIgODQuMTUwMiA1OS44NDk4IDg0LjE1MDIgNzIgNzJaTTE0NCAxNDRDMTMxLjg1IDE1Ni4xNSAxMTIuMTUgMTU2LjE1IDEwMCAxNDRDODcuODQ5OCAxMzEuODUgODcuODQ5OCAxMTIuMTUgMTAwIDEwMEMxMTIuMTUgODcuODQ5OCAxMzEuODUgODcuODQ5OCAxNDQgMTAwQzE1Ni4xNSAxMTIuMTUgMTU2LjE1IDEzMS44NSAxNDQgMTQ0Wk0wIDE0NEMxMi4xNTAyIDE1Ni4xNSAzMS44NDk4IDE1Ni4xNSA0NCAxNDRDNTYuMTUwMiAxMzEuODUgNTYuMTUwMiAxMTIuMTUgNDQgMTAwQzMxLjg0OTggODcuODQ5OCAxMi4xNTAyIDg3Ljg0OTggMCAxMDBDLTEyLjE1MDIgMTEyLjE1IC0xMi4xNTAyIDEzMS44NSAwIDE0NFpNMTQ0IDBDMTMxLjg1IC0xMi4xNTAyIDExMi4xNSAtMTIuMTUwMiAxMDAgMEM4Ny44NDk4IDEyLjE1MDIgODcuODQ5OCAzMS44NDk4IDEwMCA0NEMxMTIuMTUgNTYuMTUwMiAxMzEuODUgNTYuMTUwMiAxNDQgNDRDMTU2LjE1IDMxLjg0OTggMTU2LjE1IDEyLjE1MDIgMTQ0IDBaTTAgMEMtMTIuMTUwMiAxMi4xNTAyIC0xMi4xNTAyIDMxLjg0OTggMCA0NEMxMi4xNTAyIDU2LjE1MDIgMzEuODQ5OCA1Ni4xNTAyIDQ0IDQ0QzU2LjE1MDIgMzEuODQ5OCA1Ni4xNTAyIDEyLjE1MDIgNDQgMEMzMS44NDk4IC0xMi4xNTAyIDEyLjE1MDIgLTEyLjE1MDIgMCAwWiI+PC9wYXRoPjwvc3ZnPg==');
+            background-position: center;
+            background-repeat: repeat;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 700px;
+            padding: 60px 40px;
+            background-color: var(--white-color);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .error-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--primary-color);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        
+        .error-icon {
+            width: 120px;
+            height: 120px;
+            background-color: rgba(139, 33, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--primary-color);
+            font-size: 4rem;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .error-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+        }
+        
+        .error-text {
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .error-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        /* Construction Animation */
+        .construction-animation {
+            position: relative;
+            height: 120px;
+            width: 120px;
+            margin: 0 auto 30px;
+        }
+        
+        .bulldozer {
+            position: absolute;
+            width: 100px;
+            height: 60px;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bulldoze 3s infinite ease-in-out;
+        }
+        
+        .bulldozer:before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: var(--primary-color);
+            right: -20px;
+            top: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .bulldozer:after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 25px;
+            background-color: var(--dark-color);
+            left: -20px;
+            bottom: 0;
+            border-radius: 5px 0 0 5px;
+            animation: scoop 3s infinite ease-in-out;
+        }
+        
+        .wheel {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--dark-color);
+            border-radius: 50%;
+            bottom: -10px;
+            animation: rotate 1.5s infinite linear;
+        }
+        
+        .wheel-1 {
+            left: 15px;
+        }
+        
+        .wheel-2 {
+            right: 15px;
+        }
+        
+        .dirt {
+            position: absolute;
+            width: 20px;
+            height: 8px;
+            background-color: #8B5A2B;
+            border-radius: 4px;
+            bottom: 10px;
+            left: 10px;
+            opacity: 0;
+            animation: dig 3s infinite ease-in-out;
+        }
+        
+        @keyframes bulldoze {
+            0%, 100% { transform: translateX(-50%); }
+            50% { transform: translateX(-40%); }
+        }
+        
+        @keyframes scoop {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-20deg); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes dig {
+            0%, 100% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-20px); }
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+        
+        .footer-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--white-color);
+            padding-bottom: 15px;
+        }
+        
+        .footer-widget h4:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+        
+        .footer-links li a:hover {
+            color: var(--white-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 3rem;
+            }
+            
+            .error-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .error-content {
+                padding: 40px 20px;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu inovador e Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://gcgterraplanagem.com.br" class="logo">
+                    <h1 class="logo-text"><span>GCG</span> Terraplanagem</h1>
+                </a>
+                
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/projetos" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/contato" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <div class="overlay" id="menu-overlay"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 Error Section -->
+    <section class="error-section">
+        <div class="container">
+            <div class="error-content">
+                <div class="construction-animation">
+                    <div class="bulldozer">
+                        <div class="wheel wheel-1"></div>
+                        <div class="wheel wheel-2"></div>
+                    </div>
+                    <div class="dirt"></div>
+                </div>
+                
+                <h1 class="error-title">Página Não Encontrada</h1>
+                <h2 class="error-subtitle">Erro 404</h2>
+                <p class="error-text">Parece que estamos construindo nesta área! A página que você está procurando pode ter sido movida, removida ou está temporariamente indisponível.</p>
+                
+                <div class="error-btns">
+                    <a href="https://gcgterraplanagem.com.br" class="btn">
+                        Voltar para o Início <i class="fas fa-home"></i>
+                    </a>
+                    <a href="https://gcgterraplanagem.com.br/contato" class="btn btn-outline">
+                        Entre em Contato <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>GCG Terraplanagem</h3>
+                    <p>Oferecemos soluções completas em terraplanagem, execução de obras e projetos de engenharia, com qualidade e compromisso com nossos clientes.</p>
+                    <a href="https://www.instagram.com/gcgterraplenagem/" target="_blank" style="color: #fff; font-size: 2rem; transition: var(--transition);">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://gcgterraplanagem.com.br">Início</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/servicos">Serviços</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/projetos">Projetos</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/sobre">Sobre Nós</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+5511973414552">+55 11 97341-4552</a></li>
+                        <li><a href="mailto:g-engcivil@hotmail.com">g-engcivil@hotmail.com</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Rua Paulo Altran, 473</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Embu das Artes - SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GCG Terraplanagem | Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511973414552" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('menu-overlay');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        overlay.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    </script>
+</body>
+</html>

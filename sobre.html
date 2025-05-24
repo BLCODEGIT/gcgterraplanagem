@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | GCG Terraplenagem | Projetos e Execução de Obras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        :root {
+            --primary-color: #8B2100;
+            --secondary-color: #1E5799;
+            --accent-color: #F9A825;
+            --dark-color: #252525;
+            --light-color: #f8f8f8;
+            --white-color: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .section {
+            padding: 90px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: -40px auto 50px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Header e Menu Inovador */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.97);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white-color);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .scrolled .logo-text {
+            color: var(--primary-color);
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        /* Menu Inovador */
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            position: relative;
+            list-style: none;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 18px;
+            color: var(--white-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 30px;
+            transform: scale(0);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .nav-link:hover:before,
+        .nav-item.active .nav-link:before {
+            transform: scale(1);
+        }
+        
+        .scrolled .nav-link {
+            color: var(--dark-color);
+        }
+        
+        .scrolled .nav-link:hover,
+        .scrolled .nav-item.active .nav-link {
+            color: var(--white-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+        
+        .scrolled .menu-toggle {
+            color: var(--dark-color);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581094376391-19cfbf3c41d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            margin-top: 0;
+            position: relative;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumbs {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Sobre Nós Hero Section */
+        .about-hero {
+            background-color: var(--white-color);
+            padding: 100px 0;
+        }
+        
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-hero-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: 450px;
+        }
+        
+        .about-hero-image:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid var(--primary-color);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        
+        .about-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .about-hero-content {
+            padding: 0 20px;
+        }
+        
+        .about-hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .about-hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .about-hero-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-hero-text {
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .about-hero-signature {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .signature-img {
+            margin-right: 20px;
+        }
+        
+        .signature-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .signature-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* História da Empresa */
+        .history-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+        
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .history-text {
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .history-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .history-stat {
+            background-color: var(--white-color);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .history-stat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .history-stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .history-stat-text {
+            font-size: 1rem;
+            color: var(--dark-color);
+        }
+        
+        /* Missão, Visão e Valores */
+        .mission-section {
+            background-color: var(--white-color);
+            padding: 100px 0;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .mission-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            padding: 40px 30px;
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(139, 33, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .mission-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .mission-text {
+            color: #555;
+        }
+        
+        /* Equipe */
+        .team-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .team-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover .team-image img {
+            transform: scale(1.05);
+        }
+        
+        .team-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .team-position {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .team-bio {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        /* Linha do Tempo */
+        .timeline-section {
+            background-color: var(--white-color);
+            padding: 100px 0;
+        }
+        
+        .timeline-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        .timeline-container:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 20px 30px;
+            position: relative;
+            width: 50%;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--white-color);
+            border: 4px solid var(--primary-color);
+            top: 20px;
+        }
+        
+        .timeline-item:nth-child(odd):before {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even):before {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .timeline-text {
+            color: #555;
+        }
+        
+        /* Certificações */
+        .certifications-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .certification-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certification-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
+        
+        .certification-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .certification-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .certification-text {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white-color);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+        
+        .map-wrapper {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Info Window Estilo */
+        .gm-style-iw {
+            padding: 0 !important;
+        }
+        
+        .map-info-window {
+            padding: 15px;
+            min-width: 200px;
+        }
+        
+        .map-info-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+        
+        .map-info-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .map-info-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+        
+        .footer-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--white-color);
+            padding-bottom: 15px;
+        }
+        
+        .footer-widget h4:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+        
+        .footer-links li a:hover {
+            color: var(--white-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .history-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline-container:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:before {
+                left: 10px;
+            }
+            
+            .timeline-item:nth-child(odd):before {
+                right: auto;
+                left: 10px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                color: var(--dark-color);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-btn-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .history-stats {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 60px auto 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .about-hero-image {
+                height: 300px;
+            }
+            
+            .about-hero-image:before {
+                display: none;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu inovador e Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://gcgterraplanagem.com.br" class="logo">
+                    <h1 class="logo-text"><span>GCG</span> Terraplenagem</h1>
+                </a>
+                
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/projetos" class="nav-link">Projetos</a></li>
+                    <li class="nav-item active"><a href="https://gcgterraplanagem.com.br/sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/contato" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <div class="overlay" id="menu-overlay"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Sobre Nós</h1>
+            <p class="page-subtitle">Conheça nossa história, valores e equipe dedicada à excelência em engenharia</p>
+            <div class="breadcrumbs">
+                <a href="https://gcgterraplanagem.com.br">Início</a> / Sobre Nós
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós Hero Section -->
+    <section class="about-hero section">
+        <div class="container">
+            <div class="about-hero-grid">
+                <div class="about-hero-image">
+                    <img src="https://images.unsplash.com/photo-1581094376391-19cfbf3c41d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="GCG Terraplanagem">
+                </div>
+                <div class="about-hero-content">
+                    <h3 class="about-hero-subtitle">Bem-vindo à GCG Terraplenagem</h3>
+                    <h2 class="about-hero-title">Excelência e Qualidade há 19 anos no mercado</h2>
+                    <p class="about-hero-text">A GCG Terraplenagem é uma empresa especializada em projetos de terraplenagem, muros de arrimo, laudos técnicos e execução de obras residenciais e comerciais. Fundada em 2006, nossa empresa tem se destacado pela qualidade dos serviços prestados, comprometimento com prazos e respeito ao meio ambiente.</p>
+                    <p class="about-hero-text">Com uma equipe altamente qualificada e equipamentos modernos, oferecemos soluções completas que atendem às necessidades específicas de cada cliente. Nossa empresa é registrada no CREA e todos os nossos projetos são desenvolvidos por engenheiros habilitados, garantindo segurança e conformidade com as normas técnicas vigentes.</p>
+                    
+                    <div class="about-hero-signature">
+                        <div class="signature-img">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTIwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01IDMwQzUgMzAgMzAgMTUgNDAgMTVDNTAgMTUgNTUgMzUgNjUgMzVDNzUgMzUgODAgMTUgOTAgMTVDMTAwIDE1IDEyMCAzMCAxMjAgMzAiIHN0cm9rZT0iIzhCMjEwMCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=" alt="Assinatura">
+                        </div>
+                        <div class="signature-info">
+                            <h4>Eng° Gilmario</h4>
+                            <p>Fundador e Diretor Técnico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- História da Empresa -->
+    <section class="history-section">
+        <div class="container">
+            <h2 class="section-title">Nossa História</h2>
+            <p class="section-subtitle">Um caminho de crescimento e evolução contínua</p>
+            
+            <div class="history-content">
+                <p class="history-text">A GCG Terraplenagem nasceu da visão empreendedora do Engenheiro Gilmario, que identificou a necessidade de uma empresa que oferecesse serviços de terraplenagem e engenharia civil com alto padrão de qualidade na região de Embu das Artes e cidades vizinhas. Iniciando com poucos equipamentos e uma pequena equipe, a empresa rapidamente ganhou reconhecimento pelo comprometimento com a excelência e pela entrega de soluções eficientes.</p>
+                <p class="history-text">Ao longo dos anos, realizamos importantes projetos que contribuíram para o desenvolvimento da infraestrutura local, estabelecendo parcerias duradouras com construtoras, incorporadoras e clientes particulares. Nossa trajetória é marcada pela constante atualização tecnológica, pela busca de técnicas inovadoras e pelo compromisso com práticas sustentáveis.</p>
+                <p class="history-text">Hoje, a GCG Terraplenagem atua em toda a região metropolitana de São Paulo, oferecendo soluções completas em engenharia civil, desde projetos técnicos até a execução de obras de grande porte. Nossa história continua sendo escrita diariamente, com o mesmo compromisso e dedicação que nos trouxeram até aqui.</p>
+                
+                <div class="history-stats">
+                    <div class="history-stat">
+                        <div class="history-stat-number">19</div>
+                        <div class="history-stat-text">Anos de Atuação</div>
+                    </div>
+                    <div class="history-stat">
+                        <div class="history-stat-number">300+</div>
+                        <div class="history-stat-text">Projetos Concluídos</div>
+                    </div>
+                    <div class="history-stat">
+                        <div class="history-stat-number">100%</div>
+                        <div class="history-stat-text">Clientes Satisfeitos</div>
+                    </div>
+                    <div class="history-stat">
+                        <div class="history-stat-number">20+</div>
+                        <div class="history-stat-text">Profissionais Qualificados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missão, Visão e Valores -->
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title">Missão, Visão e Valores</h2>
+            <p class="section-subtitle">Os princípios que orientam nossa atuação</p>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="mission-title">Missão</h3>
+                    <p class="mission-text">Oferecer soluções em engenharia civil com excelência técnica e operacional, contribuindo para o desenvolvimento sustentável das comunidades onde atuamos e gerando valor para nossos clientes, colaboradores e parceiros.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="mission-title">Visão</h3>
+                    <p class="mission-text">Ser reconhecida como referência em qualidade, inovação e sustentabilidade no segmento de terraplenagem e engenharia civil, expandindo nossa atuação para todo o território nacional.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="mission-title">Valores</h3>
+                    <p class="mission-text">Ética, transparência, excelência técnica, responsabilidade socioambiental, valorização das pessoas, comprometimento com resultados e inovação constante são os valores que fundamentam todas as nossas ações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Nossa Equipe</h2>
+            <p class="section-subtitle">Profissionais dedicados a transformar ideias em realidade</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1582751836866-7e05a72efec9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Eng. Gilmario">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">Eng. Gilmario</h3>
+                        <p class="team-position">Fundador e Diretor Técnico</p>
+                        <p class="team-bio">Engenheiro Civil com mais de 20 anos de experiência em projetos de terraplenagem e construção civil. Responsável pela direção técnica e estratégica da empresa.</p>
+                        <div class="team-social">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ana Silva">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">Ana Silva</h3>
+                        <p class="team-position">Engenheira Civil</p>
+                        <p class="team-bio">Especialista em projetos estruturais e muros de contenção. Responsável pelo desenvolvimento e execução de projetos técnicos.</p>
+                        <div class="team-social">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Carlos Mendes">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">Carlos Mendes</h3>
+                        <p class="team-position">Gestor de Operações</p>
+                        <p class="team-bio">Coordena todas as operações em campo, garantindo a qualidade dos serviços executados e o cumprimento dos prazos estabelecidos.</p>
+                        <div class="team-social">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Nossa Trajetória</h2>
+            <p class="section-subtitle">Os marcos importantes da nossa história</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2006</div>
+                        <h3 class="timeline-title">Fundação da Empresa</h3>
+                        <p class="timeline-text">Início das atividades com foco em pequenos serviços de terraplenagem para construções residenciais na região de Embu das Artes.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010</div>
+                        <h3 class="timeline-title">Ampliação dos Serviços</h3>
+                        <p class="timeline-text">Expansão do portfólio com a inclusão de projetos de muros de arrimo e contenções, além da aquisição de novos equipamentos.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2014</div>
+                        <h3 class="timeline-title">Primeiro Projeto de Grande Porte</h3>
+                        <p class="timeline-text">Execução da terraplenagem e fundações para um condomínio residencial com mais de 10.000m² de área, consolidando nossa capacidade técnica.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3 class="timeline-title">Certificação e Novos Mercados</h3>
+                        <p class="timeline-text">Obtenção de certificações de qualidade e início das operações em projetos comerciais e industriais de maior complexidade.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h3 class="timeline-title">Presente e Futuro</h3>
+                        <p class="timeline-text">Atualmente, a GCG Terraplenagem segue em crescimento constante, investindo em tecnologia e sustentabilidade para oferecer serviços cada vez melhores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificações -->
+    <section class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Diferenciais</h2>
+            <p class="section-subtitle">Compromissos que garantem a qualidade dos nossos serviços</p>
+            
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNDAgMTMuMzMzMkM1My42ODE5IDEzLjMzMzIgNjQuOTk5OCAyNC42NTExIDY0Ljk5OTggMzguMzMzMkM2NC45OTk4IDUyLjAxNTIgNTMuNjgxOSA2My4zMzMyIDQwIDYzLjMzMzJDMjYuMzE4IDYzLjMzMzIgMTUuMDAwMSA1Mi4wMTUyIDE1LjAwMDEgMzguMzMzMkMxNS4wMDAxIDI0LjY1MTEgMjYuMzE4IDEzLjMzMzIgNDAgMTMuMzMzMloiIGZpbGw9IiM4QjIxMDAiLz48cGF0aCBkPSJNNTQuMTQxNyAyOS41MjQ4TDM3LjE0MTcgNDYuNTI0OEwzNC4xNDE3IDQ5LjUyNDhDMzMuOTE0NiA0OS43NTE5IDMzLjU4MjUgNDkuODgxNCAzMy4zMzM0IDQ5Ljg4MTRDMzMuMDg0MiA0OS44ODE0IDMyLjc1MjEgNDkuNzUxOSAzMi41MjUgNDkuNTI0OEwyNS44NTg0IDQyLjg1ODFDMjUuNDEwOSA0Mi40MTA3IDI1LjQxMDkgNDEuNjgwNiAyNS44NTg0IDQxLjIzMzFMMjguODU4NCAzOC4yMzMxQzI5LjMwNTkgMzcuNzg1NiAzMC4wMzU5IDM3Ljc4NTYgMzAuNDgzNCAzOC4yMzMxTDMzLjMzMzQgNDEuMDgzMUw0Ni40OTUxIDI3LjkyNDhDNDYuOTQyNSAyNy40NzczIDQ3LjY3MjYgMjcuNDc3MyA0OC4xMjAxIDI3LjkyNDhMNTEuMTIwMSAzMC45MjQ4QzUxLjU2NzUgMzEuMzcyMyA1MS41Njc1IDMyLjEwMjMgNTEuMTIwMSAzMi41NDk4TDU0LjE0MTcgMjkuNTI0OFoiIGZpbGw9IndoaXRlIi8+PC9zdmc+" alt="Qualidade">
+                    </div>
+                    <h3 class="certification-title">Qualidade Garantida</h3>
+                    <p class="certification-text">Todos os nossos serviços seguem rigorosos padrões de qualidade, com supervisão técnica especializada em todas as etapas do processo.</p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNjYuNjY2NyA0MC4wMDAxQzY2LjY2NjcgNTQuNzI3NiA1NC43Mjc2IDY2LjY2NjcgNDAgNjYuNjY2N0wzMy4zMzMzIDUzLjMzMzRMNDAgNDBMNTMuMzMzMyAzMy4zMzM0TDY2LjY2NjcgNDAuMDAwMVoiIGZpbGw9IiM4QjIxMDAiLz48cGF0aCBkPSJNNDAgNjYuNjY2N0MyNS4yNzI0IDY2LjY2NjcgMTMuMzMzMyA1NC43Mjc2IDEzLjMzMzMgNDBMNDAuMDAwMSA0MEw0NiA1My4zMzM0TDQwIDY2LjY2NjdaIiBmaWxsPSIjOEIyMTAwIi8+PHBhdGggZD0iTTEzLjMzMzMgNDBDMTMuMzMzMyAyNS4yNzI1IDI1LjI3MjQgMTMuMzMzNCA0MCAxMy4zMzM0TDQ2LjY2NjcgMjYuNjY2N0w0MCA0MEwxMy4zMzMzIDQwWiIgZmlsbD0iIzhCMjEwMCIvPjxwYXRoIGQ9Ik00MCAxMy4zMzM0QzU0LjcyNzYgMTMuMzMzNCA2Ni42NjY3IDI1LjI3MjUgNjYuNjY2NyA0MEw1My4zMzM0IDQwTDQwIDQwTDQwIDEzLjMzMzRaIiBmaWxsPSIjOEIyMTAwIi8+PC9zdmc+" alt="Sustentabilidade">
+                    </div>
+                    <h3 class="certification-title">Sustentabilidade</h3>
+                    <p class="certification-text">Adotamos práticas sustentáveis em todas as operações, minimizando o impacto ambiental e garantindo o descarte adequado de resíduos.</p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNjAuMDAwMiA2NC45OTk4SDIwLjAwMDJDMTcuMjQzOCA2NC45OTk4IDE1LjAwMDIgNjIuNzU2MSAxNS4wMDAyIDU5Ljk5OThWMzMuMzMzMUMxNS4wMDAyIDMwLjU3NjggMTcuMjQzOCAyOC4zMzMxIDIwLjAwMDIgMjguMzMzMUg2MC4wMDAyQzYyLjc1NjUgMjguMzMzMSA2NS4wMDAyIDMwLjU3NjggNjUuMDAwMiAzMy4zMzMxVjU5Ljk5OThDNjUuMDAwMiA2Mi43NTYxIDYyLjc1NjUgNjQuOTk5OCA2MC4wMDAyIDY0Ljk5OThaIiBmaWxsPSIjOEIyMTAwIi8+PHBhdGggZD0iTTMzLjMzMzUgMjMuMzMzMkgzMC4wMDAyQzMwLjAwMDIgMTcuODE5OSAzNC40ODY5IDEzLjMzMzIgNDAuMDAwMiAxMy4zMzMyQzQ1LjUxMzUgMTMuMzMzMiA1MC4wMDAyIDE3LjgxOTkgNTAuMDAwMiAyMy4zMzMySDQ2LjY2NjlDNDYuNjY2OSAxOS42NDk5IDQzLjY4MzUgMTYuNjY2NSA0MC4wMDAyIDE2LjY2NjVDMzYuMzE2OSAxNi42NjY1IDMzLjMzMzUgMTkuNjQ5OSAzMy4zMzM1IDIzLjMzMzJaIiBmaWxsPSIjOEIyMTAwIi8+PHBhdGggZD0iTTQwLjAwMDIgNTMuMzMzMUMzNi4zMTY5IDUzLjMzMzEgMzMuMzMzNSA1MC4zNDk4IDMzLjMzMzUgNDYuNjY2NVY0My4zMzMxQzMzLjMzMzUgMzkuNjQ5OCAzNi4zMTY5IDM2LjY2NjUgNDAuMDAwMiAzNi42NjY1QzQzLjY4MzUgMzYuNjY2NSA0Ni42NjY5IDM5LjY0OTggNDYuNjY2OSA0My4zMzMxVjQ2LjY2NjVDNDYuNjY2OSA1MC4zNDk4IDQzLjY4MzUgNTMuMzMzMSA0MC4wMDAyIDUzLjMzMzFaIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==" alt="Profissionalismo">
+                    </div>
+                    <h3 class="certification-title">Registro no CREA</h3>
+                    <p class="certification-text">Atuamos com registro profissional no Conselho Regional de Engenharia e Agronomia, garantindo a legalidade e conformidade técnica de todos os projetos.</p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNjYuNjY2NyAzNUgxMy4zMzM1VjU1LjQ5NTdDMTMuMzMzNSA1OC42MTMzIDE1LjA1MTggNjEuMzcxNyAxNy45MDAyIDYyLjc4NjdMMzguNTY3NSA3Mi43ODY3QzM5LjQ5OTIgNzMuMjA0MyA0MC41MDEyIDczLjIwNDMgNDEuNDMyOSA3Mi43ODY3TDYyLjEwMDIgNjIuNzg2N0M2NC45NDg1IDYxLjM3MTcgNjYuNjY2NyA1OC42MTMzIDY2LjY2NjcgNTUuNDk1N1YzNVoiIGZpbGw9IiM4QjIxMDAiLz48cGF0aCBkPSJNMzUgMjBINDVWNDBIMzVWMjBaIiBmaWxsPSIjOEIyMTAwIi8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMCAxMEgxNVYzMEgxMFYxMFpNMjAgMTBIMjVWMzBIMjBWMTBaTTMwIDEwSDM1VjIwSDMwVjEwWk00NSAxMEg1MFYyMEg0NVYxMFpNNTUgMTBINjBWMzBINTVWMTBaTTY1IDEwSDcwVjMwSDY1VjEwWiIgZmlsbD0iIzhCMjEwMCIvPjwvc3ZnPg==" alt="Equipamentos">
+                    </div>
+                    <h3 class="certification-title">Equipamentos Modernos</h3>
+                    <p class="certification-text">Utilizamos maquinário de última geração e tecnologia avançada para garantir eficiência, precisão e segurança em todos os projetos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Pronto para transformar seu projeto em realidade?</h2>
+            <p class="cta-text">Entre em contato com nossa equipe e conheça as soluções personalizadas que podemos oferecer para seu projeto. Estamos prontos para atendê-lo com excelência e dedicação.</p>
+            <div class="cta-btn-group">
+                <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                    Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://gcgterraplanagem.com.br/contato" class="btn btn-outline">
+                    Fale Conosco <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Nossa Localização</h2>
+            <p class="section-subtitle">Visite nosso escritório ou entre em contato para agendarmos uma visita técnica</p>
+            
+            <div class="map-wrapper">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>GCG Terraplenagem</h3>
+                    <p>Oferecemos soluções completas em terraplenagem, execução de obras e projetos de engenharia, com qualidade e compromisso com nossos clientes há 19 anos.</p>
+                    <a href="https://www.instagram.com/gcgterraplenagem/" target="_blank" style="color: #fff; font-size: 2rem; transition: var(--transition);">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://gcgterraplanagem.com.br">Início</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/servicos">Serviços</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/projetos">Projetos</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/sobre">Sobre Nós</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+5511973414552">+55 11 97341-4552</a></li>
+                        <li><a href="mailto:g-engcivil@hotmail.com">g-engcivil@hotmail.com</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Rua Paulo Altran, 473</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Embu das Artes - SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GCG Terraplenagem | Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511973414552" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('menu-overlay');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        overlay.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+        
+        // Google Maps com Pin Personalizado
+        function initMap() {
+            // Localização da GCG Terraplanagem em Embu das Artes
+            const location = { lat: -23.6474213, lng: -46.8500034 };
+            
+            // Opções do mapa
+            const mapOptions = {
+                zoom: 15,
+                center: location,
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "weight": "2.00"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#9c9c9c"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text",
+                        "stylers": [
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#f2f2f2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#f2f2f2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape.man_made",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#eeeeee"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 45
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#7b7b7b"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "simplified"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#c4c4c4"
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#aadaff"
+                            }
+                        ]
+                    }
+                ]
+            };
+            
+            // Criar o mapa
+            const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            
+            // Conteúdo do InfoWindow
+            const contentString = 
+                '<div class="map-info-window">' +
+                '<h3 class="map-info-title">GCG Terraplanagem</h3>' +
+                '<p>Rua Paulo Altran, 473 - Embu das Artes, SP</p>' +
+                '<a href="https://wa.me/5511973414552" class="map-info-link" target="_blank">Agende uma Visita</a>' +
+                '</div>';
+            
+            // Criar InfoWindow
+            const infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                maxWidth: 250
+            });
+            
+            // Criar marcador
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'GCG Terraplanagem',
+                animation: google.maps.Animation.DROP
+            });
+            
+            // Abrir InfoWindow quando o marcador for clicado
+            marker.addListener('click', () => {
+                infowindow.open(map, marker);
+            });
+            
+            // Abrir InfoWindow automaticamente
+            infowindow.open(map, marker);
+        }
+        
+        // Ensure map initializes when page loads
+        window.onload = function() {
+            // Check if initMap is already defined
+            if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
+                initMap();
+            }
+        };
+    </script>
+</body>
+</html>

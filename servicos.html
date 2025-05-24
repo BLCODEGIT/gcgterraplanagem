@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | GCG Terraplenagem | Projetos e Execução de Obras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        :root {
+            --primary-color: #8B2100;
+            --secondary-color: #1E5799;
+            --accent-color: #F9A825;
+            --dark-color: #252525;
+            --light-color: #f8f8f8;
+            --white-color: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .section {
+            padding: 90px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: -40px auto 50px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Header e Menu Inovador */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.97);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white-color);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .scrolled .logo-text {
+            color: var(--primary-color);
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        /* Menu Inovador */
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            position: relative;
+            list-style: none;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 18px;
+            color: var(--white-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 30px;
+            transform: scale(0);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .nav-link:hover:before,
+        .nav-item.active .nav-link:before {
+            transform: scale(1);
+        }
+        
+        .scrolled .nav-link {
+            color: var(--dark-color);
+        }
+        
+        .scrolled .nav-link:hover,
+        .scrolled .nav-item.active .nav-link {
+            color: var(--white-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+        
+        .scrolled .menu-toggle {
+            color: var(--dark-color);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            margin-top: 0;
+            position: relative;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumbs {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Services Expanded Section */
+        .services-expanded-section {
+            background-color: var(--white-color);
+            padding: 100px 0;
+        }
+        
+        .services-category {
+            margin-bottom: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .services-category:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .services-category:nth-child(even) .services-category-content {
+            direction: ltr;
+        }
+        
+        .services-category:nth-child(even) .services-category-image {
+            direction: ltr;
+        }
+        
+        .services-category:last-child {
+            margin-bottom: 0;
+        }
+        
+        .services-category-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+        
+        .services-category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .services-category-content {
+            padding: 30px;
+        }
+        
+        .services-category-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .services-category-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .services-category-subtitle {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .services-category-text {
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .services-category-features {
+            margin-bottom: 30px;
+        }
+        
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .service-feature i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        /* Related Services Section */
+        .related-services {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .related-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .related-service-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .related-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .related-service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .related-service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .related-service-card:hover .related-service-image img {
+            transform: scale(1.1);
+        }
+        
+        .related-service-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .related-service-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .related-service-text {
+            margin-bottom: 20px;
+            color: #555;
+            flex: 1;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background-color: var(--white-color);
+            padding: 80px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-title {
+            color: var(--white-color);
+            font-size: 1.1rem;
+        }
+        
+        .gallery-more {
+            display: none;
+        }
+        
+        .gallery-more.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .gallery-btn-wrapper {
+            text-align: center;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white-color);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .map-wrapper {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Info Window Estilo */
+        .gm-style-iw {
+            padding: 0 !important;
+        }
+        
+        .map-info-window {
+            padding: 15px;
+            min-width: 200px;
+        }
+        
+        .map-info-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+        
+        .map-info-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .map-info-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+        
+        .footer-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--white-color);
+            padding-bottom: 15px;
+        }
+        
+        .footer-widget h4:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+        
+        .footer-links li a:hover {
+            color: var(--white-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button - no canto inferior esquerdo */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Posicionado à esquerda conforme solicitado */
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .services-category-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .services-category {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-category:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .related-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid,
+            .gallery-more.active {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                color: var(--dark-color);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-btn-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .related-services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .services-category-image {
+                height: 300px;
+            }
+            
+            .gallery-grid,
+            .gallery-more.active {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu inovador e Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://gcgterraplanagem.com.br" class="logo">
+                    <h1 class="logo-text"><span>GCG</span> Terraplenagem</h1>
+                </a>
+                
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br" class="nav-link">Início</a></li>
+                    <li class="nav-item active"><a href="https://gcgterraplanagem.com.br/servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/projetos" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/contato" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <div class="overlay" id="menu-overlay"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Nossos Serviços</h1>
+            <p class="page-subtitle">Soluções completas em engenharia civil com qualidade e compromisso há 19 anos</p>
+            <div class="breadcrumbs">
+                <a href="https://gcgterraplanagem.com.br">Início</a> / Serviços
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Expanded Section -->
+    <section class="services-expanded-section">
+        <div class="container">
+            <h2 class="section-title">Conheça Nossos Serviços</h2>
+            <p class="section-subtitle">Oferecemos soluções completas e personalizadas para atender às suas necessidades</p>
+            
+            <!-- Serviço 1: Terraplanagem -->
+            <div class="services-category">
+                <div class="services-category-image">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Terraplanagem">
+                </div>
+                <div class="services-category-content">
+                    <h3 class="services-category-title">Terraplenagem</h3>
+                    <h4 class="services-category-subtitle">Preparação de terrenos com precisão e segurança</h4>
+                    <p class="services-category-text">Realizamos serviços de terraplenagem com tecnologia avançada e equipamentos modernos, garantindo a preparação adequada do terreno para sua construção. Nossa equipe especializada trabalha com precisão para nivelar, compactar e preparar o solo conforme as necessidades específicas do seu projeto.</p>
+                    
+                    <div class="services-category-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Escavação e movimento de terra controlado</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Nivelamento e compactação de terrenos</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Preparação de terrenos para construção</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Regularização topográfica</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                        Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+                      
+            
+            <!-- Serviço 3: Perfurações -->
+            <div class="services-category">
+                <div class="services-category-image">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Perfurações">
+                </div>
+                <div class="services-category-content">
+                    <h3 class="services-category-title">Perfurações</h3>
+                    <h4 class="services-category-subtitle">Soluções precisas em perfuração para diferentes necessidades</h4>
+                    <p class="services-category-text">Realizamos serviços de perfuração com equipamentos de alta tecnologia e equipe especializada, atendendo a diferentes demandas da construção civil. Nossos serviços são executados com precisão e segurança, garantindo resultados de qualidade e durabilidade para seu projeto.</p>
+                    
+                    <div class="services-category-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Perfuração para fundações especiais</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Sondagem e análise de solo</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Perfuração para poços artesianos</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Perfuração controlada em concreto e rocha</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                        Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Serviço 4: Projetos -->
+            <div class="services-category">
+                <div class="services-category-image">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Projetos">
+                </div>
+                <div class="services-category-content">
+                    <h3 class="services-category-title">Projetos</h3>
+                    <h4 class="services-category-subtitle">Projetos técnicos elaborados por engenheiros e arquitetos especializados</h4>
+                    <p class="services-category-text">Desenvolvemos projetos técnicos completos para obras residenciais e comerciais, com foco em soluções eficientes e sustentáveis. Nossa equipe de engenheiros qualificados e registrados no CREA trabalha com as mais modernas ferramentas de projeto para garantir a excelência e conformidade com as normas técnicas.</p>
+                    
+                    <div class="services-category-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Projetos de muros de arrimo e contenções</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Laudos técnicos e vistorias</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Projetos estruturais e arquitetônicos</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Regularização de obras e documentação técnica</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                        Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Serviço 5: Construções -->
+            <div class="services-category">
+                <div class="services-category-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Construções">
+                </div>
+                <div class="services-category-content">
+                    <h3 class="services-category-title">Construções</h3>
+                    <h4 class="services-category-subtitle">Execução de obras residenciais e comerciais</h4>
+                    <p class="services-category-text">Executamos obras residenciais e comerciais com excelência, desde a fundação até o acabamento final. Nossa equipe é composta por profissionais altamente qualificados, comprometidos com a qualidade, cumprimento de prazos e satisfação dos clientes. Cada projeto é único e recebe atenção personalizada.</p>
+                    
+                    <div class="services-category-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Construção de residências e edifícios comerciais</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Reformas e ampliações</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Execução de muros de arrimo e contenções</p>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Gerenciamento e acompanhamento de obras</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                        Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galeria de Projetos</h2>
+            <p class="section-subtitle">Confira imagens de alguns dos nossos trabalhos realizados</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Terraplanagem Residencial">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Terraplenagem Residencial</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Muro de Arrimo">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Muro de Arrimo</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Perfuração Técnica">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Perfuração Técnica</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Construção Comercial">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Construção Comercial</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sistema de Drenagem">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Sistema de Drenagem</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Gallery Items (Hidden by Default) -->
+            <div class="gallery-more" id="gallery-more">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Escavação para Fundação">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Escavação para Fundação</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Acabamento Residencial">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Acabamento Residencial</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502224562085-639556652f33?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Movimentação de Terra">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Movimentação de Terra</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1617245856663-591d8a3fbef4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Estruturas de Concreto">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Estruturas de Concreto</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1623659596624-50a0c279e142?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Projeto Executivo">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Projeto Executivo</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Preparação de Terreno">
+                    <div class="gallery-item-overlay">
+                        <h3 class="gallery-item-title">Preparação de Terreno</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-btn-wrapper">
+                <button class="btn" id="gallery-btn">
+                    Ver Mais Fotos <i class="fas fa-images"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Serviços Complementares</h2>
+            <p class="section-subtitle">Confira outros serviços que oferecemos para complementar seu projeto</p>
+            
+            <div class="related-services-grid">
+                <div class="related-service-card">
+                    <div class="related-service-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Drenagem">
+                    </div>
+                    <div class="related-service-content">
+                        <h3 class="related-service-title">Drenagem e Infraestrutura</h3>
+                        <p class="related-service-text">Implementamos sistemas de drenagem eficientes para prevenir erosão e acúmulo de água, garantindo a estabilidade do terreno e prevenindo problemas futuros.</p>
+                        <a href="https://wa.me/5511973414552" class="btn btn-outline" target="_blank">Consultar</a>
+                    </div>
+                </div>
+                
+                <div class="related-service-card">
+                    <div class="related-service-image">
+                        <img src="https://images.unsplash.com/photo-1548094891-c4ba474efd16?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Consultoria">
+                    </div>
+                    <div class="related-service-content">
+                        <h3 class="related-service-title">Consultoria Técnica</h3>
+                        <p class="related-service-text">Oferecemos consultoria especializada em engenharia civil para avaliar viabilidade, identificar riscos e propor soluções técnicas para seu projeto.</p>
+                        <a href="https://wa.me/5511973414552" class="btn btn-outline" target="_blank">Consultar</a>
+                    </div>
+                </div>
+                
+                <div class="related-service-card">
+                    <div class="related-service-image">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Acabamentos">
+                    </div>
+                    <div class="related-service-content">
+                        <h3 class="related-service-title">Acabamentos e Revestimentos</h3>
+                        <p class="related-service-text">Realizamos acabamentos de alta qualidade em construções residenciais e comerciais, utilizando materiais selecionados para garantir durabilidade e beleza.</p>
+                        <a href="https://wa.me/5511973414552" class="btn btn-outline" target="_blank">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Pronto para iniciar seu projeto?</h2>
+            <p class="cta-text">Entre em contato com nossa equipe para uma avaliação gratuita e orçamento personalizado para seu projeto. Estamos prontos para transformar seus planos em realidade com excelência e profissionalismo.</p>
+            <div class="cta-btn-group">
+                <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                    Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://gcgterraplanagem.com.br/contato" class="btn btn-outline">
+                    Fale Conosco <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section - CORRIGIDO -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Nossa Localização</h2>
+            <p class="section-subtitle">Visite nosso escritório ou entre em contato para agendarmos uma visita técnica</p>
+            
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5151692261783!2d-46.8525783!3d-23.6473674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53974cb6cbe7%3A0xcb1f07e0f5e4bcf7!2sR.%20Paulo%20Autran%2C%20473%20-%20Mundo%20Real%2C%20Embu%20das%20Artes%20-%20SP%2C%2006805-280!5e0!3m2!1spt-BR!2sbr!4v1716404323063!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius:10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>GCG Terraplenagem</h3>
+                    <p>Oferecemos soluções completas em terraplenagem, execução de obras e projetos de engenharia há 19 anos, com qualidade e compromisso com nossos clientes.</p>
+                    <a href="https://www.instagram.com/gcgterraplenagem/" target="_blank" style="color: #fff; font-size: 2rem; transition: var(--transition);">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://gcgterraplanagem.com.br">Início</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/servicos">Serviços</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/projetos">Projetos</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/sobre">Sobre Nós</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+5511973414552">+55 11 97341-4552</a></li>
+                        <li><a href="mailto:g-engcivil@hotmail.com">g-engcivil@hotmail.com</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Rua Paulo Altran, 473</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Embu das Artes - SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GCG Terraplenagem | Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button (à esquerda) -->
+    <a href="https://wa.me/5511973414552" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('menu-overlay');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        overlay.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+        
+        // Gallery "Ver Mais" Button
+        const galleryBtn = document.getElementById('gallery-btn');
+        const galleryMore = document.getElementById('gallery-more');
+        
+        if (galleryBtn && galleryMore) {
+            galleryBtn.addEventListener('click', function() {
+                galleryMore.classList.toggle('active');
+                
+                if (galleryMore.classList.contains('active')) {
+                    galleryBtn.innerHTML = 'Ver Menos <i class="fas fa-chevron-up"></i>';
+                    galleryBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    galleryBtn.innerHTML = 'Ver Mais Fotos <i class="fas fa-images"></i>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

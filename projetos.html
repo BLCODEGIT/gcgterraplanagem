@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | GCG Terraplenagem | Projetos e Execução de Obras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Gerais */
+        :root {
+            --primary-color: #8B2100;
+            --secondary-color: #1E5799;
+            --accent-color: #F9A825;
+            --dark-color: #252525;
+            --light-color: #f8f8f8;
+            --white-color: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        p {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .section {
+            padding: 90px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: -40px auto 50px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Header e Menu Inovador */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.97);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white-color);
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .scrolled .logo-text {
+            color: var(--primary-color);
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        /* Menu Inovador */
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .nav-item {
+            position: relative;
+            list-style: none;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 10px 18px;
+            color: var(--white-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 30px;
+            transform: scale(0);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .nav-link:hover:before,
+        .nav-item.active .nav-link:before {
+            transform: scale(1);
+        }
+        
+        .scrolled .nav-link {
+            color: var(--dark-color);
+        }
+        
+        .scrolled .nav-link:hover,
+        .scrolled .nav-item.active .nav-link {
+            color: var(--white-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+        
+        .scrolled .menu-toggle {
+            color: var(--dark-color);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            margin-top: 0;
+            position: relative;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .breadcrumbs {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Projetos Destacados */
+        .featured-projects {
+            background-color: var(--white-color);
+            padding: 100px 0;
+        }
+        
+        .project-showcase {
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .project-showcase:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .project-showcase:nth-child(even) .project-showcase-content {
+            direction: ltr;
+        }
+        
+        .project-showcase:nth-child(even) .project-showcase-image {
+            direction: ltr;
+        }
+        
+        .project-showcase:last-child {
+            margin-bottom: 0;
+        }
+        
+        .project-showcase-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+        
+        .project-showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-showcase-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .project-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .project-showcase-content {
+            padding: 30px;
+        }
+        
+        .project-showcase-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .project-showcase-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .project-showcase-category {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: inline-block;
+            background-color: rgba(139, 33, 0, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .project-showcase-text {
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .project-details {
+            margin-bottom: 30px;
+        }
+        
+        .project-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .project-detail i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        /* Galeria de Projetos */
+        .projects-grid-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-category {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+            background-color: rgba(139, 33, 0, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        /* Antes e Depois */
+        .before-after-section {
+            background-color: var(--white-color);
+            padding: 100px 0;
+        }
+        
+        .before-after-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .before-after-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .before-after-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 300px;
+        }
+        
+        .before-image, .after-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .before-image {
+            border-right: 2px solid var(--white-color);
+        }
+        
+        .before-image img, .after-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-label {
+            position: absolute;
+            bottom: 15px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .before-label {
+            left: 15px;
+        }
+        
+        .after-label {
+            right: 15px;
+        }
+        
+        .before-after-content {
+            padding: 20px;
+            background-color: var(--white-color);
+        }
+        
+        .before-after-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .before-after-description {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Testemunhos */
+        .testimonials-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            color: rgba(139, 33, 0, 0.1);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 25px;
+            font-style: italic;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .testimonial-author-info p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white-color);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Instagram Feed */
+        .instagram-feed {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+        
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .instagram-post {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .instagram-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .instagram-post:hover img {
+            transform: scale(1.1);
+        }
+        
+        .instagram-post:hover .instagram-overlay {
+            opacity: 1;
+        }
+        
+        .instagram-info {
+            color: var(--white-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .instagram-info i {
+            font-size: 1.2rem;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .map-wrapper {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Info Window Estilo */
+        .gm-style-iw {
+            padding: 0 !important;
+        }
+        
+        .map-info-window {
+            padding: 15px;
+            min-width: 200px;
+        }
+        
+        .map-info-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+        
+        .map-info-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .map-info-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+        
+        .footer-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--white-color);
+            padding-bottom: 15px;
+        }
+        
+        .footer-widget h4:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+        
+        .footer-links li a:hover {
+            color: var(--white-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Filtro de Projetos */
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background-color: var(--white-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .project-showcase-title {
+                font-size: 1.8rem;
+            }
+            
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .project-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .project-showcase:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .before-after-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .instagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: var(--white-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                color: var(--dark-color);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-btn-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .project-showcase-image {
+                height: 300px;
+            }
+            
+            .instagram-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu inovador e Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://gcgterraplanagem.com.br" class="logo">
+                    <h1 class="logo-text"><span>GCG</span> Terraplenagem</h1>
+                </a>
+                
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item active"><a href="https://gcgterraplanagem.com.br/projetos" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/sobre" class="nav-link">Sobre Nós</a></li>
+                    <li class="nav-item"><a href="https://gcgterraplanagem.com.br/contato" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <div class="overlay" id="menu-overlay"></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Nossos Projetos</h1>
+            <p class="page-subtitle">Conheça nossos trabalhos e cases de sucesso em execução de obras e engenharia</p>
+            <div class="breadcrumbs">
+                <a href="https://gcgterraplanagem.com.br">Início</a> / Projetos
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Destacados -->
+    <section class="featured-projects section">
+        <div class="container">
+            <h2 class="section-title">Projetos Destacados</h2>
+            <p class="section-subtitle">Confira alguns dos nossos trabalhos de maior relevância</p>
+            
+            <!-- Projeto 1 -->
+            <div class="project-showcase">
+                <div class="project-showcase-image">
+                    <span class="project-status">Concluído</span>
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Terraplanagem Condomínio">
+                </div>
+                <div class="project-showcase-content">
+                    <span class="project-showcase-category">Terraplenagem</span>
+                    <h3 class="project-showcase-title">Preparação de Terreno para Condomínio</h3>
+                    <p class="project-showcase-text">Realizamos toda a preparação do terreno para construção de um condomínio residencial de alto padrão na região de Embu das Artes. O projeto incluiu movimentação de 5.000m³ de terra, nivelamento completo e preparação para fundações.</p>
+                    
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Local:</strong> Embu das Artes - SP</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p><strong>Duração:</strong> 45 dias</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-ruler"></i>
+                            <p><strong>Área:</strong> 12.000m²</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-check-circle"></i>
+                            <p><strong>Serviços:</strong> Movimentação de terra, Nivelamento, Compactação</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://gcgterraplanagem.com.br/projetos/terraplanagem-condominio" class="btn">
+                        Ver Detalhes do Projeto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 2 -->
+            <div class="project-showcase">
+                <div class="project-showcase-image">
+                    <span class="project-status">Concluído</span>
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Muro de Arrimo">
+                </div>
+                <div class="project-showcase-content">
+                    <span class="project-showcase-category">Muro de Arrimo</span>
+                    <h3 class="project-showcase-title">Contenção em Área Residencial</h3>
+                    <p class="project-showcase-text">Projeto e execução de muro de arrimo em área residencial com desnível significativo. Utilizamos técnicas modernas para garantir a segurança e estabilidade do terreno, permitindo o aproveitamento total da área para construção.</p>
+                    
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Local:</strong> Cotia - SP</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p><strong>Duração:</strong> 60 dias</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-ruler"></i>
+                            <p><strong>Extensão:</strong> 35 metros lineares</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-check-circle"></i>
+                            <p><strong>Serviços:</strong> Projeto estrutural, Execução, Drenagem</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://gcgterraplanagem.com.br/projetos/muro-arrimo-residencial" class="btn">
+                        Ver Detalhes do Projeto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 3 -->
+            <div class="project-showcase">
+                <div class="project-showcase-image">
+                    <span class="project-status">Concluído</span>
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Obra Comercial">
+                </div>
+                <div class="project-showcase-content">
+                    <span class="project-showcase-category">Obras</span>
+                    <h3 class="project-showcase-title">Execução de Obra Comercial</h3>
+                    <p class="project-showcase-text">Execução completa de edificação comercial, desde a fundação até os acabamentos finais. O projeto exigiu soluções especiais de terraplenagem e fundação devido às características do terreno, resultando em uma estrutura moderna e funcional.</p>
+                    
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Local:</strong> São Paulo - SP</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p><strong>Duração:</strong> 8 meses</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-ruler"></i>
+                            <p><strong>Área Construída:</strong> 650m²</p>
+                        </div>
+                        <div class="project-detail">
+                            <i class="fas fa-check-circle"></i>
+                            <p><strong>Serviços:</strong> Terraplenagem, Fundação, Estrutura, Acabamentos</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://gcgterraplanagem.com.br/projetos/obra-comercial" class="btn">
+                        Ver Detalhes do Projeto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Projetos -->
+    <section class="projects-grid-section">
+        <div class="container">
+            <h2 class="section-title">Galeria de Projetos</h2>
+            <p class="section-subtitle">Conheça um pouco mais do nosso trabalho em diferentes áreas de atuação</p>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="terraplanagem">Terraplenagem</button>
+                <button class="filter-btn" data-filter="muros">Muros de Arrimo</button>
+                <button class="filter-btn" data-filter="obras">Obras</button>
+                <button class="filter-btn" data-filter="laudos">Laudos Técnicos</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Projeto 1 -->
+                <div class="project-card" data-category="terraplanagem">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Terraplanagem Residencial">
+                        <span class="project-tag">Terraplenagem</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Residencial</span>
+                        <h3 class="project-title">Preparação para Residência de Alto Padrão</h3>
+                        <p class="project-description">Terraplenagem e preparação de terreno para construção de residência de alto padrão em condomínio fechado.</p>
+                        <a href="https://gcgterraplanagem.com.br/projetos/terraplanagem-residencial" class="btn btn-outline">Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="project-card" data-category="muros">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Muro de Arrimo">
+                        <span class="project-tag">Muro de Arrimo</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Contenção</span>
+                        <h3 class="project-title">Muro de Contenção para Condomínio</h3>
+                        <p class="project-description">Projeto e execução de muro de arrimo para área de lazer de condomínio vertical.</p>
+                        <a href="https://gcgterraplanagem.com.br/projetos/muro-arrimo-condominio" class="btn btn-outline">Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 3 -->
+                <div class="project-card" data-category="obras">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Obra Comercial">
+                        <span class="project-tag">Obra</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Comercial</span>
+                        <h3 class="project-title">Construção de Loja em Shopping</h3>
+                        <p class="project-description">Execução completa de espaço comercial em shopping center incluindo todas as instalações.</p>
+                        <a href="https://gcgterraplanagem.com.br/projetos/obra-loja" class="btn btn-outline">Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 4 -->
+                <div class="project-card" data-category="terraplanagem">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Terraplanagem Industrial">
+                        <span class="project-tag">Terraplenagem</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Industrial</span>
+                        <h3 class="project-title">Preparação para Galpão Logístico</h3>
+                        <p class="project-description">Terraplenagem e movimentação de terra para construção de galpão logístico de grande porte.</p>
+                        <a href="https://gcgterraplanagem.com.br/projetos/terraplanagem-industrial" class="btn btn-outline">Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 5 -->
+                <div class="project-card" data-category="laudos">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Laudo Técnico">
+                        <span class="project-tag">Laudo</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Avaliação</span>
+                        <h3 class="project-title">Laudo de Estabilidade Estrutural</h3>
+                        <p class="project-description">Elaboração de laudo técnico para avaliação de estabilidade estrutural em edifício comercial.</p>
+                        <a href="https://gcgterraplanagem.com.br/projetos/laudo-estrutural" class="btn btn-outline">Ver Projeto</a>
+                    </div>
+                </div>
+                
+                <!-- Projeto 6 -->
+                <div class="project-card" data-category="muros">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Muro Gabião">
+                        <span class="project-tag">Muro de Arrimo</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Inovação</span>
+                        <h3 class="project-title">Contenção em Gabião para Área com Nascente</h3>
+                        <p class="project-description">Solução inovadora com muro tipo gabião para área com nascente preservando o meio ambiente.</p>
+                        <a href="https://gcgterraplanagem.com.br/projetos/muro-gabiao" class="btn btn-outline">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Antes e Depois -->
+    <section class="before-after-section">
+        <div class="container">
+            <h2 class="section-title">Antes e Depois</h2>
+            <p class="section-subtitle">Veja a transformação completa dos nossos projetos</p>
+            
+            <div class="before-after-gallery">
+                <!-- Item 1 -->
+                <div class="before-after-item">
+                    <div class="before-after-images">
+                        <div class="before-image">
+                            <img src="https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Antes">
+                            <span class="image-label before-label">Antes</span>
+                        </div>
+                        <div class="after-image">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Depois">
+                            <span class="image-label after-label">Depois</span>
+                        </div>
+                    </div>
+                    <div class="before-after-content">
+                        <h3 class="before-after-title">Terraplenagem para Condomínio</h3>
+                        <p class="before-after-description">Transformação completa de área acidentada em terreno plano pronto para construção.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="before-after-item">
+                    <div class="before-after-images">
+                        <div class="before-image">
+                            <img src="https://images.unsplash.com/photo-1617245856663-591d8a3fbef4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Antes">
+                            <span class="image-label before-label">Antes</span>
+                        </div>
+                        <div class="after-image">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Depois">
+                            <span class="image-label after-label">Depois</span>
+                        </div>
+                    </div>
+                    <div class="before-after-content">
+                        <h3 class="before-after-title">Muro de Arrimo Residencial</h3>
+                        <p class="before-after-description">Solução de contenção que permitiu aproveitar totalmente o terreno para construção.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testemunhos -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Depoimentos de Clientes</h2>
+            <p class="section-subtitle">O que dizem nossos clientes sobre nossos projetos</p>
+            
+            <div class="testimonials-grid">
+                <!-- Testemunho 1 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-content">A GCG Terraplenagem fez um trabalho excepcional na preparação do terreno para minha residência. O prazo foi respeitado e a qualidade do serviço superou minhas expectativas. Recomendo fortemente!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ricardo Oliveira">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Ricardo Oliveira</h4>
+                            <p>São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testemunho 2 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-content">Contratamos a GCG para construção de um muro de arrimo em nosso condomínio. A equipe foi extremamente profissional, oferecendo soluções inovadoras para nosso caso específico.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Camila Mendes">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Camila Mendes</h4>
+                            <p>Administradora de Condomínio</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testemunho 3 -->
+                <div class="testimonial-card">
+                    <p class="testimonial-content">Excelente empresa! O projeto de terraplenagem foi executado com precisão, respeitando todas as normas ambientais. O engenheiro Gilmario esteve presente em todas as etapas, garantindo a qualidade do serviço.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-img">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Fernando Costa">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Fernando Costa</h4>
+                            <p>Empreendedor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="instagram-feed">
+        <div class="container">
+            <h2 class="section-title">Acompanhe no Instagram</h2>
+            <p class="section-subtitle">Siga-nos para ver nossos projetos em tempo real</p>
+            
+            <div class="instagram-grid" id="instagram-feed">
+                <!-- Instagram posts will be loaded here via JavaScript -->
+            </div>
+            
+            <div class="section-cta" style="margin-top: 40px;">
+                <a href="https://www.instagram.com/gcgterraplenagem/" class="btn" target="_blank">
+                    Seguir no Instagram <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Pronto para iniciar seu projeto?</h2>
+            <p class="cta-text">Entre em contato conosco para discutir seu próximo projeto. Nossa equipe está pronta para desenvolver a melhor solução para suas necessidades.</p>
+            <div class="cta-btn-group">
+                <a href="https://wa.me/5511973414552" class="btn" target="_blank">
+                    Solicitar Orçamento <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://gcgterraplanagem.com.br/contato" class="btn btn-outline">
+                    Fale Conosco <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Nossa Localização</h2>
+            <p class="section-subtitle">Visite nosso escritório ou entre em contato para agendarmos uma visita técnica</p>
+            
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.5151692261783!2d-46.8525783!3d-23.6473674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53974cb6cbe7%3A0xcb1f07e0f5e4bcf7!2sR.%20Paulo%20Autran%2C%20473%20-%20Mundo%20Real%2C%20Embu%20das%20Artes%20-%20SP%2C%2006805-280!5e0!3m2!1spt-BR!2sbr!4v1716404323063!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius:10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>GCG Terraplenagem & Demolição</h3>
+                    <p>Oferecemos soluções completas em terraplenagem, execução de obras e projetos de engenharia há 19 anos, com qualidade e compromisso com nossos clientes.</p>
+                    <a href="https://www.instagram.com/gcgterraplenagem/" target="_blank" style="color: #fff; font-size: 2rem; transition: var(--transition);">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://gcgterraplanagem.com.br">Início</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/servicos">Serviços</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/projetos">Projetos</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/sobre">Sobre Nós</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+5511973414552">+55 11 97341-4552</a></li>
+                        <li><a href="mailto:gcgengenharia@hotmail.com">gcgengenharia@hotmail.com</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Rua Paulo Altran, 473</a></li>
+                        <li><a href="https://gcgterraplanagem.com.br/contato">Embu das Artes - SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 GCG Terraplenagem | Todos os direitos reservados</p>
+                <p>Site criado por <a href="https://blcode.com.br" target="_blank" style="color: #1E5799; font-weight: bold;">blcode.com.br</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511973414552" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const overlay = document.getElementById('menu-overlay');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        overlay.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+        
+        // Filtro de projetos
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remover classe ativa de todos os botões
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Adicionar classe ativa ao botão clicado
+                this.classList.add('active');
+                
+                // Filtrar os projetos
+                const filter = this.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'todos') {
+                        card.style.display = 'block';
+                    } else if (card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Instagram Feed Integration
+        async function fetchInstagramPosts() {
+            const instagramFeed = document.getElementById('instagram-feed');
+            
+            try {
+                // Esta é uma versão simplificada - em um cenário real você usaria a API do Instagram
+                // Aqui estamos simulando os posts para demonstração
+                
+                const dummyPosts = [
+                    {
+                        image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        caption: 'Preparação de terreno concluída para novo empreendimento. #terraplanagem #construção',
+                        likes: 45,
+                        comments: 6
+                    },
+                    {
+                        image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        caption: 'Muro de arrimo finalizado com segurança e qualidade. #murodearrimo #engenharia',
+                        likes: 62,
+                        comments: 8
+                    },
+                    {
+                        image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        caption: 'Mais uma obra entregue no prazo! #construçãocivil #GCGterraplanagem',
+                        likes: 38,
+                        comments: 4
+                    },
+                    {
+                        image: 'https://images.unsplash.com/photo-1581094376391-19cfbf3c41d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                        caption: 'Equipe em ação na preparação de novo terreno. #terraplanagem #equipamentos',
+                        likes: 53,
+                        comments: 7
+                    }
+                ];
+                
+                // Limpar conteúdo existente
+                instagramFeed.innerHTML = '';
+                
+                // Criar os posts
+                dummyPosts.forEach(post => {
+                    const postElement = document.createElement('div');
+                    postElement.className = 'instagram-post';
+                    
+                    postElement.innerHTML = `
+                        <img src="${post.image}" alt="Instagram Post">
+                        <a href="https://www.instagram.com/gcgterraplenagem/" class="instagram-overlay" target="_blank">
+                            <div class="instagram-info">
+                                <span><i class="fas fa-heart"></i> ${post.likes}</span>
+                                <span><i class="fas fa-comment"></i> ${post.comments}</span>
+                            </div>
+                        </a>
+                    `;
+                    
+                    instagramFeed.appendChild(postElement);
+                });
+                
+                // Nota para implementação real: 
+                // Na implementação real, você usaria a API do Instagram Basic Display ou outro serviço
+                // como Curator.io ou Elfsight para obter os posts reais
+            } catch (error) {
+                console.error('Falha ao carregar posts do Instagram:', error);
+                instagramFeed.innerHTML = `<p>Falha ao carregar posts do Instagram. Por favor, visite nossa página diretamente.</p>`;
+            }
+        }
+        
+        // Execute quando a página estiver totalmente carregada
+        window.addEventListener('load', function() {
+            // Carregar posts do Instagram
+            fetchInstagramPosts();
+        });
+    </script>
+</body>
+</html>
