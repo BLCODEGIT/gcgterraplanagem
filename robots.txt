@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Bloquear arquivos desnecessários
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.log
+Disallow: *.sql
+
+# Permitir bots importantes
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://gcgterraplanagem.com.br/sitemap.xml
